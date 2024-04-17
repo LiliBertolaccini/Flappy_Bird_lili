@@ -1,0 +1,108 @@
+{
+	"name": "Jogador",
+	"plugin-id": "Sprite",
+	"sid": 508686535657021,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 102929142106939
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 18,
+						"originX": 0.5294117647058824,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 484250,
+						"collisionPoly": {
+							"points": [
+								0.4471115800580322,
+								0.05555555555555555,
+								0.6011606436296492,
+								0.10854700854700855,
+								1,
+								0.5136752136752136,
+								0.5526246372988657,
+								0.9444444444444444,
+								0.4724347137958322,
+								0.9444444444444444,
+								0.058823529411764705,
+								0.6094017094017095,
+								0.058823529411764705,
+								0.5444444444444445,
+								0.31205486678976524,
+								0.12564102564102564
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 610024277780348,
+				"name": "Animation",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 3
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 18,
+						"originX": 0.5294117647058824,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3168912,
+						"collisionPoly": {
+							"points": [
+								0.4471115800580322,
+								0.05555555555555555,
+								0.6011606436296492,
+								0.10854700854700855,
+								1,
+								0.5136752136752136,
+								0.5526246372988657,
+								0.9444444444444444,
+								0.4724347137958322,
+								0.9444444444444444,
+								0.058823529411764705,
+								0.6094017094017095,
+								0.058823529411764705,
+								0.5444444444444445,
+								0.31205486678976524,
+								0.12564102564102564
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 133668463466896,
+				"name": "PerdendoVida",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

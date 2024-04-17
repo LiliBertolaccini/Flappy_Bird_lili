@@ -1,0 +1,256 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Pontos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 564985723920566
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 790736583688625,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 124410743440042,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "Jogador",
+					"sid": 346040136880275,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-265"
+					}
+				},
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "Jogador",
+					"sid": 267718824163863,
+					"parameters": {
+						"degrees": "30"
+					}
+				}
+			],
+			"sid": 174573601861815,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 154531415330093,
+					"parameters": {
+						"interval-seconds": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 571545905396060,
+					"parameters": {
+						"object-to-create": "Cano",
+						"layer": "0",
+						"x": "155",
+						"y": "random(145, 305)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 896423438495793,
+					"parameters": {
+						"object-to-create": "Cano",
+						"layer": "0",
+						"x": "155",
+						"y": "Cano.Y - 250",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 431907912416267
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 137631637696497
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Cano",
+					"sid": 817061317942661,
+					"parameters": {
+						"x": "Cano.X - 50 * dt"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 727622949811082,
+					"parameters": {
+						"text": "Pontos"
+					}
+				}
+			],
+			"sid": 843793819200824
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "Cano",
+					"sid": 243112752422793
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "Jogador",
+					"sid": 693619141622767,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "Cano.X"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 985666930161150
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 621919704418865,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 881900464036250
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Jogador",
+					"sid": 937085144810911,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "260"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 158131424906167
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 133293321037576,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 894862962083571
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jogador",
+					"sid": 684023914879069,
+					"parameters": {
+						"object": "Cano"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jogador",
+					"sid": 270687168605588,
+					"parameters": {
+						"animation": "\"PerdendoVida\"",
+						"from": "current-frame"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 755482509001694,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 164347959772495
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 662454638122048,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 847081755293731,
+					"parameters": {
+						"audio-file": "Dark Forest Bird",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 444548088547185
+		}
+	],
+	"sid": 685661715782709
+}
